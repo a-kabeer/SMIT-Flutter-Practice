@@ -1,6 +1,7 @@
 import 'dart:math';
 
 void main() {
+  //Q7: Write a program to calculate root of any number. i.e: √y = y1⁄2
 //Method 1
   int y = 16;
   num sqaureRoot = pow(y, 0.5);
