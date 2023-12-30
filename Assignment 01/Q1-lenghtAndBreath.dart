@@ -6,5 +6,6 @@ void main() {
     print("It is Square");
   } else {
     print("It is rectangle");
+    
   }
 }
