@@ -8,7 +8,7 @@
             "name": "Dart & Flutter",
             "type": "dart",
             "request": "launch",
-            "program": ".dart"
+            "program": "Practice-01/additionTwoUserInput.dart"
         }
-    ]  
+    ]
 }
