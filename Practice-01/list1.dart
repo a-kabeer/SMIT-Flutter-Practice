@@ -1,5 +1,3 @@
-import 'dart:isolate';
-
 void main() {
   List<int> subjects = [1, 4, 2, 3, 6, 5, 8, 7];
   subjects.sort();
@@ -18,6 +16,6 @@ void main() {
   print(rollno);
   rollno.removeWhere((e) => e < 5);
   print(rollno);
-  rollno.where((e) => e<6);
+  rollno.where((e) => e < 6);
   print(rollno);
 }
