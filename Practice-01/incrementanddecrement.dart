@@ -6,6 +6,7 @@ void main() {
   print(abc);
   a = abc++;
   print(abc);
+  print(a);
   // print("a=$a abc=$abc");
   // var b = abc--;
   // //b=-1 abc=-2;
