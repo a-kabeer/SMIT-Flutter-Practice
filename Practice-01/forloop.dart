@@ -1,5 +1,3 @@
-import 'dart:io';
-
 void main() {
   //Table
   // print("Enter a Number to Generate Table");
