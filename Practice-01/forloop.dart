@@ -26,7 +26,7 @@ void main() {
   List id = [2, 1, 5, 7, 4, 2, 4, 6, 8, 9, 6, 5, 4, 32, 2];
   List evenNumber = [];
   List oddNumber = [];
-  for (int a =0; a< id.length; a++) {
+  for (int a = 0; a < id.length; a++) {
     if (id[a] % 2 == 0) {
       evenNumber.add(id[a]);
     } else {
