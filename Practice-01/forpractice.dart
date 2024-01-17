@@ -13,7 +13,9 @@ void main() {
     "khalid",
     "waleed",
     "amar"
+    
   ];
+  
   for (int i = 0; i < studentname.length; i = i + 1) {
     print(studentname[i]);
   }
