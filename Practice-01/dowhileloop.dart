@@ -12,9 +12,7 @@ void main() {
   print("You Can try 3 times");
   bool isLogin = false;
   int b = 3;
-  do {
-    
-  } while (isLogin == false && b > 0);  {
+  while (isLogin == false && b > 0) {
     print("Enter Your Email");
     String emailInput = stdin.readLineSync()!;
     print("Enter Your Password");
@@ -23,6 +21,7 @@ void main() {
       if (emailInput == email[i]["email"] &&
           passwordInput == email[i]["password"]) {
         isLogin = true;
+      }
     }
     if (isLogin == true) {
       print("Logged in successful");
@@ -30,11 +29,10 @@ void main() {
       print("Logged in Failed");
     }
     --b;
-    if(b!=0)
-    print("$b attempt Left");
-    else{
+    if (b != 0)
+      print("$b attempt Left");
+    else {
       print("You are blocked for 24hours");
     }
   }
-}
 }

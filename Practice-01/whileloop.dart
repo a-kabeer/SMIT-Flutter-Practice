@@ -29,9 +29,9 @@ void main() {
       print("Logged in Failed");
     }
     --b;
-    if(b!=0)
-    print("$b attempt Left");
-    else{
+    if (b != 0)
+      print("$b attempt Left");
+    else {
       print("You are blocked for 24hours");
     }
   }
