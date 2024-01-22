@@ -17,11 +17,11 @@ void main() {
     String emailInput = stdin.readLineSync()!;
     print("Enter Your Password");
     String passwordInput = stdin.readLineSync()!;
-    for (var i = 0; i < email.length; i++) {
-      if (emailInput == email[i]["email"] &&
-          passwordInput == email[i]["password"]) {
+    for (var account in email) {
+      if (emailInput == account["email"] && passwordInput == account["password"]){
         isLogin = true;
       }
+      isLogin = false;
     }
     if (isLogin == true) {
       print("Logged in successful");
