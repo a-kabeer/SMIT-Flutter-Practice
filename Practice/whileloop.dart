@@ -13,9 +13,9 @@ void main() {
   bool isLogin = false;
   int b = 3;
   while (isLogin == false && b > 0) {
-    print("Enter Your Email");
+    stdout.write("Enter Your Email: ");
     String emailInput = stdin.readLineSync()!;
-    print("Enter Your Password");
+    stdout.write("Enter Your Password: ");
     String passwordInput = stdin.readLineSync()!;
     for (var account in email) {
       if (emailInput == account["email"] && passwordInput == account["password"]){
