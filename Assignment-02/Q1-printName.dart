@@ -9,7 +9,10 @@ void main() {
     "Shoaib",
     "Noman",
   ];
-  for (var i = 0; i < studentName.length; i++) {
-    print(studentName[i]);
+  for (var e in studentName) {
+    print(e);
   }
+  // for (var i = 0; i < studentName.length; i++) {
+  //   print(studentName[i]);
+  // }
 }

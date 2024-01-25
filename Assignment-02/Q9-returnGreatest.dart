@@ -1,5 +1,5 @@
 void main() {
-  int a = greatest([2, 1, 4, 6, 4, 8]);
+  int a = greatest([2, 1, 4, 6, 4, 3]);
   print(a);
 }
 

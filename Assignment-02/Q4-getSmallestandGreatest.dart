@@ -3,6 +3,5 @@ void main() {
   List<int> numbers = [2, 3, 1, 5, 7, 43, 22, 56, 33, 68, 89, 2, 12, 5, 56];
   print(numbers);
   numbers.sort();
-  print(numbers);
-  print("Smallest Number= ${numbers[0]}\nGreatest Number= ${numbers.last}");
+  print("Smallest Number= ${numbers.first}\nGreatest Number= ${numbers.last}");
 }
