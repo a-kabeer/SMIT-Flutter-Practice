@@ -1,5 +1,3 @@
-import 'dart:io';
-
 void main() {
   //Q.8: remove all false values from below list by using removeWhere or retainWhere property.
   List<Map<String, dynamic>> usersEligibility = [
