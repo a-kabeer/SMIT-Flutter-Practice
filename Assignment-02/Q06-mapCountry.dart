@@ -3,51 +3,29 @@ void main() {
   List world = [
     {
       "country": {
-        "pakistan": {
-          "capitalCity": "karachi",
-          "currency": "rupees",
-          "language": "urdu"
-        }
+        "capitalCity": "Islamabad",
+        "currency": "Rupees",
+        "language": "Urdu"
       }
     },
     {
       "country": {
-        "iran": {
-          "capitalCity": "tehran",
-          "currency": "rial",
-          "language": "farsi"
-        }
+        "capitalCity": "Tehran",
+        "currency": "Rial",
+        "language": "Farsi"
       }
     },
     {
       "country": {
-        "afghanistan": {
-          "capitalCity": "kabul",
-          "currency": "afghani",
-          "language": "pashto/farsi"
-        }
-      }
-    },
-    {
-      "country": {
-        "china": {
-          "capitalCity": "beijing",
-          "currency": "yuan",
-          "language": "chinese"
-        }
-      }
-    },
-    {
-      "country": {
-        "india": {
-          "capitalCity": "New Delhi",
-          "currency": "rupees",
-          "language": "hindi/english"
-        }
+        "capitalCity": "New Delhi",
+        "currency": "Rupee",
+        "language": "Hindi/English"
       }
     }
   ];
-  for (var i = 0; i < world.length; i++) {
-    print(world[i]["country"]);
-  }
+  world.forEach((countryMap) {
+    countryMap.forEach((key, value) {
+      print("${value["capitalCity"]}, ${value["currency"]}");
+    });
+  });
 }
