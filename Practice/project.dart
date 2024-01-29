@@ -5,10 +5,11 @@ void main() {
   stdout.write("Before we start please Enter you name: ");
   bool isName = true;
   String name1 = "";
+  RegExp pattern = RegExp(r'^[a-zA-Z]+(\s[a-zA-Z]+)*$');
   while (isName) {
     String name = stdin.readLineSync() ?? "";
     name1 = name;
-    if (name == "") {
+    if (name == "" || !pattern.hasMatch(name)) {
       stdout.write("Please Enter valid name: ");
     } else {
       print("$name! Welcome to ToDo Application");
@@ -34,9 +35,11 @@ void main() {
         while (isNewTask) {
           stdout.write("Enter 0 to go back\nEnter your task: ");
           String newTask = stdin.readLineSync() ?? "";
-          if (newTask == "" || newTask == "0") {
+          if (newTask == "" || newTask == "0" || !pattern.hasMatch(newTask)) {
             if (newTask == "") {
               print("Please write something");
+            } else if (!pattern.hasMatch(newTask)) {
+              print("Please Enter text only");
             } else if (newTask == "0") {
               isNewTask = false;
             }
@@ -89,6 +92,8 @@ void main() {
                   isNewUpdateTask = false;
                 } else if (newUpdateTask == "") {
                   print("Please write something");
+                } else if (!pattern.hasMatch(newUpdateTask)) {
+                  print("Enter Valid Text");
                 } else {
                   String oldValue = TaskList[update];
                   updateTask.add(newUpdateTask);
