@@ -1,5 +1,3 @@
-import 'dart:async';
-import 'dart:ffi';
 import 'dart:io';
 
 void main() {
@@ -21,10 +19,14 @@ void main() {
       if (option == 1) {
         bool isNewTask = true;
         while (isNewTask) {
-          stdout.write("Enter your task: ");
+          stdout.write("Enter 0 to go back\nEnter your task: ");
           String newTask = stdin.readLineSync() ?? "";
-          if (newTask == "") {
-            print("Please write something");
+          if (newTask == "" || newTask == "0") {
+            if (newTask == "") {
+              print("Please write something");
+            } else if (newTask == "0") {
+              isNewTask = false;
+            }
           } else {
             TaskList.add(newTask);
             print("New Task added : $newTask");
@@ -46,26 +48,37 @@ void main() {
           print("There is no data to update");
         } else {
           print("Which task u want to edit");
+          int storeI = 0;
           for (var i = 0; i < TaskList.length; i++) {
             print("$i : ${TaskList[i]}\n");
           }
           bool isUpdate = true;
-          print("Select number from 0 - ${TaskList.length - 1}");
+          print(
+              "Press ${TaskList.length} to go back\nSelect number from 0 - ${TaskList.length - 1}");
           while (isUpdate) {
             stdout.write("Enter Number: ");
             int? update = int.tryParse(stdin.readLineSync() ?? "");
-            if (update == null || update > TaskList.length - 1 || update < 0) {
+            if (update == TaskList.length) {
+              isUpdate = false;
+            } else if (update == null ||
+                update > TaskList.length - 1 ||
+                update < 0) {
               print(
-                  "Please Select a valid number from 0 to ${TaskList.length - 1}");
+                  "Please Select a valid number from 0 - ${TaskList.length - 1}");
             } else {
               List updateTask = [];
-              stdout.write("Update the Task: ");
+              stdout.write(
+                  "Enter ${TaskList.length} to go back\nUpdate the Task: ");
               String newUpdateTask = stdin.readLineSync()!;
-              String oldValue = TaskList[update];
-              updateTask.add(newUpdateTask);
-              TaskList.replaceRange(update, update + 1, updateTask);
-              print("$oldValue Successfully updated to ${TaskList[update]}");
-              isUpdate = false;
+              if (newUpdateTask == TaskList.length.toString()) {
+                isUpdate = false;
+              } else {
+                String oldValue = TaskList[update];
+                updateTask.add(newUpdateTask);
+                TaskList.replaceRange(update, update + 1, updateTask);
+                print("$oldValue Successfully updated to ${TaskList[update]}");
+                isUpdate = false;
+              }
             }
           }
         }
@@ -79,13 +92,17 @@ void main() {
           for (var i = 0; i < TaskList.length; i++) {
             print("$i : ${TaskList[i]}\n");
           }
-          print("Select number from 0 - ${TaskList.length - 1}");
+          print(
+              "Enter ${TaskList.length} to go back\nSelect number from 0 - ${TaskList.length - 1}");
           stdout.write("Enter Number: ");
           bool isDelete = true;
           while (isDelete) {
             int? delete = int.tryParse(stdin.readLineSync() ?? "");
-            if (delete == null || delete < 0 || delete > TaskList.length - 1) {
-              //0 us greater than 0
+            if (delete == TaskList.length) {
+              isDelete = false;
+            } else if (delete == null ||
+                delete < 0 ||
+                delete > TaskList.length - 1) {
               stdout
                   .write("Select Correct Number 0 - ${TaskList.length - 1}: ");
             } else {
