@@ -80,7 +80,10 @@ viewTask() {
   if (TaskList.isEmpty) {
     print("There is no data to show");
   } else {
-    print("Here is your task list: $TaskList");
+    print("Here is your task list:");
+    for (var i = 0; i < TaskList.length; i++) {
+      print("$i. My Task: ${TaskList[i]}");
+    }
   }
 }
 
@@ -123,8 +126,7 @@ updateTask() {
             print("Enter Valid Text");
           } else {
             String oldValue = TaskList[update];
-            updateTask.add(newUpdateTask);
-            TaskList.replaceRange(update, update + 1, updateTask);
+            TaskList[update] = newUpdateTask;
             print("$oldValue Successfully updated to ${TaskList[update]}");
             isNewUpdateTask = false;
             isUpdate = false;
