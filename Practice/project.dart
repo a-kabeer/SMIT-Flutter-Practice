@@ -48,7 +48,6 @@ void main() {
           print("There is no data to update");
         } else {
           print("Which task u want to edit");
-          int storeI = 0;
           for (var i = 0; i < TaskList.length; i++) {
             print("$i : ${TaskList[i]}\n");
           }
