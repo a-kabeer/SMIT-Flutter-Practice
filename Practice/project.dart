@@ -1,20 +1,7 @@
 import 'dart:io';
 
 void main() {
-  print("ToDo Application");
-  stdout.write("Before we start please Enter you name: ");
-  bool isName = true;
-  while (isName) {
-    String name = stdin.readLineSync() ?? "";
-    name1 = name;
-    if (name == "" || !pattern.hasMatch(name)) {
-      stdout.write("Please Enter valid name: ");
-    } else {
-      print("$name! Welcome to ToDo Application");
-      isName = false;
-    }
-  }
-
+  startApplication();
   while (isActive == true) {
     print("========");
     print("Press 1 for Add Task");
@@ -52,7 +39,22 @@ String name1 = "";
 bool isActive = true;
 List TaskList = [];
 RegExp pattern = RegExp(r'^[a-zA-Z]+(\s[a-zA-Z]+)*$');
-startApplication() {}
+startApplication() {
+  print("ToDo Application");
+  stdout.write("Before we start please Enter you name: ");
+  bool isName = true;
+  while (isName) {
+    String name = stdin.readLineSync() ?? "";
+    name1 = name;
+    if (name == "" || !pattern.hasMatch(name)) {
+      stdout.write("Please Enter valid name: ");
+    } else {
+      print("$name! Welcome to ToDo Application");
+      isName = false;
+    }
+  }
+}
+
 addTask() {
   bool isNewTask = true;
   while (isNewTask) {
