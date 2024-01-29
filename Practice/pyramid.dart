@@ -1,12 +1,13 @@
 import 'dart:io';
 
 void main() {
-  var row = 5;
+  var row = 4;
   var space = " ";
-  for (var i = 1; i < 5; i++) {
-    for (var j = 1; i > j; j++) {
-      stdout.write("${space * (row - 1)}");
+  for (var i = 1; i < row; i++) {
+    stdout.write("${space * (row - i)}");
+    for (var j = 1; j <= i; j++) {
+      stdout.write("*$space");
     }
-    print("*");
+    print("");
   }
 }
