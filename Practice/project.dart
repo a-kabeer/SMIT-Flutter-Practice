@@ -1,7 +1,20 @@
 import 'dart:io';
 
 void main() {
-  print("Welcome ToDo Application");
+  print("ToDo Application");
+  stdout.write("Before we start please Enter you name: ");
+  bool isName = true;
+  String name1 = "";
+  while (isName) {
+    String name = stdin.readLineSync() ?? "";
+    name1 = name;
+    if (name == "") {
+      stdout.write("Please Enter valid name: ");
+    } else {
+      print("$name! Welcome to ToDo Application");
+      isName = false;
+    }
+  }
   bool isActive = true;
   List TaskList = [];
   while (isActive == true) {
@@ -66,17 +79,25 @@ void main() {
                   "Please Select a valid number from 0 - ${TaskList.length - 1}");
             } else {
               List updateTask = [];
-              stdout.write(
-                  "Enter ${TaskList.length} to go back\nUpdate the Task: ");
-              String newUpdateTask = stdin.readLineSync()!;
-              if (newUpdateTask == TaskList.length.toString()) {
-                isUpdate = false;
-              } else {
-                String oldValue = TaskList[update];
-                updateTask.add(newUpdateTask);
-                TaskList.replaceRange(update, update + 1, updateTask);
-                print("$oldValue Successfully updated to ${TaskList[update]}");
-                isUpdate = false;
+              bool isNewUpdateTask = true;
+              while (isNewUpdateTask) {
+                stdout.write(
+                    "Enter ${TaskList.length} to go back\nUpdate the Task: ");
+                String newUpdateTask = stdin.readLineSync() ?? "";
+                if (newUpdateTask == TaskList.length.toString()) {
+                  isUpdate = false;
+                  isNewUpdateTask = false;
+                } else if (newUpdateTask == "") {
+                  print("Please write something");
+                } else {
+                  String oldValue = TaskList[update];
+                  updateTask.add(newUpdateTask);
+                  TaskList.replaceRange(update, update + 1, updateTask);
+                  print(
+                      "$oldValue Successfully updated to ${TaskList[update]}");
+                  isNewUpdateTask = false;
+                  isUpdate = false;
+                }
               }
             }
           }
@@ -123,6 +144,7 @@ void main() {
           int? retry = int.tryParse(stdin.readLineSync() ?? "");
           if (retry == 1) {
             isActive = true;
+            print("Welcome Back, $name1!");
             isRetry = false;
           } else {
             print("Progam Exited");
