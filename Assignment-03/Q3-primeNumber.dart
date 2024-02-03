@@ -1,6 +1,3 @@
-import 'dart:io';
-import 'dart:math';
-
 //Implement a code that checks whether a given number is prime or not.
 //Example:
 //Input: 17
