@@ -8,6 +8,7 @@ import 'dart:io';
 
 void main() {
   int count = 1;
+  String space = " ";
   for (var i = 0; i < 5; i++) {
     for (var j = 1; i >= j; j++) {
       stdout.write("${count++} ");
