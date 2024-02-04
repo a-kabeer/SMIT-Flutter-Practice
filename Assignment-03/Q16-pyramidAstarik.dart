@@ -6,7 +6,6 @@
 import 'dart:io';
 
 void main() {
-  int count = 1;
   int row = 5;
   String space = " ";
   for (var i = 0; i < row; i++) {
