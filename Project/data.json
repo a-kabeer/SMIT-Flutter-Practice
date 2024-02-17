@@ -22,23 +22,7 @@
         "name": "asd",
         "email": "asdas1@sg.com",
         "password": "asdas1@sg.coM",
-        "task": [
-            {
-                "taskTitle": "asdasdaa",
-                "taskDueDate": "09/09 09:00am",
-                "taskPriority": "Normal"
-            },
-            {
-                "taskTitle": "asdasda",
-                "taskDueDate": "09/09 09:00am",
-                "taskPriority": "Low"
-            },
-            {
-                "taskTitle": "asdasd",
-                "taskDueDate": "09/09 09:00am",
-                "taskPriority": "Normal"
-            }
-        ],
+        "task": [],
         "isBlocked": false,
         "isActiveUser": true
     }
