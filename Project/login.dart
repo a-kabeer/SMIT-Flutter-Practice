@@ -70,6 +70,8 @@ class Authentication {
             print(result);
           }
         case 0:
+          print('SMIT - Flutter Batch 2');
+          print('Special Thanks to Sir Bilal Rehman Khan');
           print('Powered by Abdul Kabeer');
           await Future.delayed(Duration(seconds: 3));
           exit(0);
