@@ -12,6 +12,7 @@ class ToDo {
   String? email;
   String? name;
   String file = 'data.json';
+  //Constructor
   ToDo({required name, required email}) {
     this.email = email;
     this.name = name;

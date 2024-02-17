@@ -3,6 +3,7 @@ import 'dart:io';
 
 void main() {}
 
+//Constructor
 class Authentication {
   String? email;
   String? name;

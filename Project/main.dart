@@ -4,7 +4,6 @@ import 'toDo.dart';
 import 'login.dart';
 
 void main() async {
-// void main() {
   Authentication authentication = Authentication();
   authentication.authenticationStart();
   if (authentication.email != null && authentication.name != null) {
