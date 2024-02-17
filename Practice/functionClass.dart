@@ -1,5 +1,3 @@
-import 'dart:io';
-
 void main() {
   marksheet(name: "Abdul Kabeer", marks: 50);
   marksheet(name: "Sameer", marks: 80, section: "B");

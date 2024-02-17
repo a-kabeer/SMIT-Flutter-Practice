@@ -1,0 +1,45 @@
+[
+    {
+        "name": "asd",
+        "email": "asdas@sg.com",
+        "password": "asdas@sg.coM",
+        "task": [
+            {
+                "taskTitle": "Testing",
+                "taskDueDate": "02/02 09:00am",
+                "taskPriority": "Low"
+            },
+            {
+                "taskTitle": "testing",
+                "taskDueDate": "02/02 09:00am",
+                "taskPriority": "Low"
+            }
+        ],
+        "isBlocked": false,
+        "isActiveUser": true
+    },
+    {
+        "name": "asd",
+        "email": "asdas1@sg.com",
+        "password": "asdas1@sg.coM",
+        "task": [
+            {
+                "taskTitle": "asdasdaa",
+                "taskDueDate": "09/09 09:00am",
+                "taskPriority": "Normal"
+            },
+            {
+                "taskTitle": "asdasda",
+                "taskDueDate": "09/09 09:00am",
+                "taskPriority": "Low"
+            },
+            {
+                "taskTitle": "asdasd",
+                "taskDueDate": "09/09 09:00am",
+                "taskPriority": "Normal"
+            }
+        ],
+        "isBlocked": false,
+        "isActiveUser": true
+    }
+]

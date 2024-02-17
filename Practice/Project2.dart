@@ -19,27 +19,47 @@ void main() {
     print("Press 5 for exit");
     int? option = int.tryParse(stdin.readLineSync() ?? "");
     //add task
-    if (option == null || option < 1 || option > 5) {
-      print("Please enter a valid option (1-5)");
-    } else {
-      if (option == 1) {
+    switch (option) {
+      case 1:
         addTask();
-      }
-      //view task
-      else if (option == 2) {
+        break;
+      case 2:
         viewTask();
-      } else if (option == 3) {
+        break;
+      case 3:
         updateTask();
-      }
-      //Delete task
-      else if (option == 4) {
+        break;
+      case 4:
         deleteTask();
-      }
-      //exit
-      else if (option == 5) {
+        break;
+      case 5:
         exitTask();
-      }
+        break;
+      default:
+        print("Please enter a valid option (1-5)");
+        break;
     }
+    // if (option == null || option < 1 || option > 5) {
+    //   print("Please enter a valid option (1-5)");
+    // } else {
+    //   if (option == 1) {
+    //     addTask();
+    //   }
+    //   //view task
+    //   else if (option == 2) {
+    //     viewTask();
+    //   } else if (option == 3) {
+    //     updateTask();
+    //   }
+    //   //Delete task
+    //   else if (option == 4) {
+    //     deleteTask();
+    //   }
+    //   //exit
+    //   else if (option == 5) {
+    //     exitTask();
+    //   }
+    // }
   }
 }
 
