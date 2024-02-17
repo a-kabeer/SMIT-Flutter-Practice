@@ -1,5 +1,5 @@
 void main() {
-  MyClass obj = MyClass();
+  // MyClass obj = MyClass();
   // print(obj.add(2, 5));
 }
 

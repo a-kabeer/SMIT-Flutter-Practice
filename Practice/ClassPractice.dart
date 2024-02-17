@@ -1,5 +1,5 @@
 class A {
-  int? _private;
+  // int? _private;
 
   int? a;
   int b = 1;

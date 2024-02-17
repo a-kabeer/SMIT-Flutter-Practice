@@ -15,7 +15,7 @@ bool isPrime(int number) {
   if (number < 2) {
     return false;
   }
-  num result;
+  // num result;
   for (int i = 2; i <= number ~/ i; i++) {
     print("$number / $i : ${number ~/ i}");
     print("$number / $i : ${number % i == 0}");
