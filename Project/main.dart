@@ -6,6 +6,7 @@ import 'login.dart';
 
 void main() async {
   Authentication authentication = Authentication();
+  authentication.printSquareMessage();
   authentication.authenticationStart();
   if (authentication.email != null && authentication.name != null) {
     String email = authentication.email!;
@@ -13,6 +14,7 @@ void main() async {
     ToDo objToDo = ToDo(name: name, email: email);
     objToDo.startApplication();
     authentication.printSquareMessage();
+    print("Please wait, closing...");
     await Future.delayed(Duration(seconds: 3));
     exit(0);
   }

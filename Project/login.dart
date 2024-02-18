@@ -71,6 +71,7 @@ class Authentication {
           }
         case 0:
           printSquareMessage();
+          print("Please wait, closing...");
           await Future.delayed(Duration(seconds: 3));
           // isReady = false;
           exit(0);
@@ -384,6 +385,8 @@ class Authentication {
     List<String> lines = [
       "SMIT - Flutter Batch 2",
       "Special Thanks to Sir Bilal Rehman Khan",
+      "&",
+      "Sir Huzaifa",
       "Powered by Abdul Kabeer"
     ];
 
@@ -404,9 +407,5 @@ class Authentication {
       print(paddedLine);
     }
     print(border);
-
-    // Adding a delay
-    print("Please wait, closing...");
-    await Future.delayed(Duration(seconds: 3));
   }
 }

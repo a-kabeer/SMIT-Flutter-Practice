@@ -302,8 +302,6 @@ class ToDo {
         print("Welcome Back, $name!");
         isRetry = false;
       } else {
-        print("Progam Exited");
-
         isRetry = false;
       }
     }
