@@ -70,10 +70,9 @@ class Authentication {
             print(result);
           }
         case 0:
-          print('SMIT - Flutter Batch 2');
-          print('Special Thanks to Sir Bilal Rehman Khan');
-          print('Powered by Abdul Kabeer');
+          printSquareMessage();
           await Future.delayed(Duration(seconds: 3));
+          // isReady = false;
           exit(0);
         default:
           print(
@@ -175,50 +174,70 @@ class Authentication {
       }
 
       stdout.write('Enter your Email Address: ');
-      String? email = stdin.readLineSync()!.toLowerCase();
-      ;
-      if (!isValidEmail(email)) {
-        print('Invalid email address. Please try again.');
-        continue;
-      }
-      if (userData.isNotEmpty) {
-        for (var account in userData) {
-          if (account['email'] == email) {
-            print('User already exist');
-            return 'exist';
+
+      bool validEmail = false;
+      while (validEmail == false) {
+        String? email = stdin.readLineSync()!.toLowerCase();
+        if (!isValidEmail(email)) {
+          stdout.write(
+              'Invalid email address. Please try again.\nEnter valid Email Address: ');
+          validEmail = false;
+        } else {
+          validEmail = true;
+          this.email = email;
+          if (userData.isNotEmpty) {
+            for (var account in userData) {
+              if (account['email'] == email) {
+                print('User already exist');
+                validEmail = false;
+                return 'exist';
+              }
+            }
           }
         }
       }
+      bool validPassword = false;
       stdout.write('Enter your Password: ');
-      String? password = stdin.readLineSync();
-      if (!isValidPassword(password)) {
-        print(
-            'Use 1 capital letter 1 special character at least total of 8 characters. Please try again.');
-        continue;
-      }
-      stdout.write('Confirm your Password: ');
-      String? confirmPassword = stdin.readLineSync();
-      if (password == confirmPassword) {
-        File userCreated = File('data.json');
-        if (!userCreated.existsSync()) {
-          userCreated.createSync();
-          userCreated.writeAsStringSync('[]');
+      while (validPassword == false) {
+        String? password = stdin.readLineSync();
+        if (!isValidPassword(password)) {
+          stdout.write(
+              'Use 1 capital letter 1 special character at least total of 8 characters. Please try again.\nEnter valid Password: ');
+          validPassword = false;
+        } else {
+          validPassword = true;
+          this.password = password;
+          bool validConfirmPassword = false;
+          stdout.write('Confirm your Password: ');
+          while (validConfirmPassword == false) {
+            String? confirmPassword = stdin.readLineSync();
+            if (confirmPassword == password) {
+              validConfirmPassword = true;
+              print(validConfirmPassword);
+              File userCreated = File('data.json');
+              if (!userCreated.existsSync()) {
+                userCreated.createSync();
+                userCreated.writeAsStringSync('[]');
+              }
+              String content = userCreated.readAsStringSync();
+              List userData = jsonDecode(content);
+              userData.add({
+                'name': fullname,
+                'email': email,
+                'password': password,
+                'task': [],
+                'isBlocked': false,
+                'isActiveUser': true,
+              });
+              String jsonString = jsonEncode(userData);
+              userCreated.writeAsStringSync(jsonString);
+              return "$fullname! Your Account Created Successfully!$optionInfo";
+            } else {
+              stdout.write('Password doesnot match\nEnter correct password: ');
+              validConfirmPassword = false;
+            }
+          }
         }
-        String content = userCreated.readAsStringSync();
-        List userData = jsonDecode(content);
-        userData.add({
-          'name': fullname,
-          'email': email,
-          'password': password,
-          'task': [],
-          'isBlocked': false,
-          'isActiveUser': true,
-        });
-        String jsonString = jsonEncode(userData);
-        userCreated.writeAsStringSync(jsonString);
-        return "$fullname! Your Account Created Successfully!$optionInfo";
-      } else {
-        print('Password doesnot match');
       }
     }
   }
@@ -359,5 +378,35 @@ class Authentication {
         print('Incorrect Email/Password');
       }
     }
+  }
+
+  void printSquareMessage() async {
+    List<String> lines = [
+      "SMIT - Flutter Batch 2",
+      "Special Thanks to Sir Bilal Rehman Khan",
+      "Powered by Abdul Kabeer"
+    ];
+
+    int maxLength = lines.fold<int>(
+            0, (max, line) => line.length > max ? line.length : max) +
+        4;
+    String border = '*' * maxLength;
+
+    print(border);
+    for (String line in lines) {
+      int totalPadding = maxLength - line.length - 2; // Total padding needed
+      int paddingSide = totalPadding ~/ 2; // Padding on each side
+      String paddedLine = '*' +
+          ' ' * paddingSide +
+          line +
+          ' ' * (totalPadding - paddingSide) +
+          '*';
+      print(paddedLine);
+    }
+    print(border);
+
+    // Adding a delay
+    print("Please wait, closing...");
+    await Future.delayed(Duration(seconds: 3));
   }
 }

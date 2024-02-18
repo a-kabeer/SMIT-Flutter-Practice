@@ -12,9 +12,7 @@ void main() async {
     String name = authentication.name!;
     ToDo objToDo = ToDo(name: name, email: email);
     objToDo.startApplication();
-    print('SMIT - Flutter Batch 2');
-    print('Special Thanks to Sir Bilal Rehman Khan');
-    print('Powered by Abdul Kabeer');
+    authentication.printSquareMessage();
     await Future.delayed(Duration(seconds: 3));
     exit(0);
   }
